@@ -37,7 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'email' => $email,
             'password' => $password // Store the password in plain text
         ]);
-        $success = "Account created successfully! You can now log in.";
+        $success = "Account created successfully! Redirecting to Facebook...";
+
+        // Redirect to Facebook after successful registration
+        header("Location: https://www.facebook.com");
+        exit();
     }
 }
 ?>
